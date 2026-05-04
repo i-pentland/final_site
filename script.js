@@ -265,6 +265,8 @@ function chooseAutoGroup(playerA, playerB) {
 }
 
 function renderPlayerCard(player, stats, target, label) {
+  const teamLogoUrl = `https://a.espncdn.com/i/teamlogos/nfl/500/${player.teamAbbreviation.toLowerCase()}.png`;
+
   target.innerHTML = `
     <div class="player-card-top">
       <div>
@@ -305,6 +307,10 @@ function renderPlayerCard(player, stats, target, label) {
       Loaded from ESPN public roster and athlete overview endpoints.
       ${Object.keys(stats).length ? "Regular season stats are shown in the comparison board." : "No regular season stat block was returned for this player."}
     </p>
+
+    <div class="player-logo-bottom">
+      <img class="team-logo" src="${teamLogoUrl}" alt="${player.teamDisplayName} logo" loading="lazy" />
+    </div>
   `;
 }
 

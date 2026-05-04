@@ -3,12 +3,12 @@
   --panel: #fcfaf4;
   --panel-strong: #f8f4eb;
   --border: #d2c8b8;
-  --text: #172126;
+  --text: black;
   --muted: #58646c;
   --accent: #1f6f50;
   --accent-strong: #0d5c3a;
   --accent-soft: #d9f0e2;
-  --loss-soft: #f3ddd5;
+  --loss-soft: white;
   --shadow: 0 16px 40px rgba(44, 41, 35, 0.09);
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -400,6 +400,18 @@ button:hover {
 
 .bio {
   margin: 0;
+}
+
+.player-logo-bottom {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.team-logo {
+  width: 140px;
+  height: auto;
+  opacity: 0.16;
 }
 
 .mini-grid {
