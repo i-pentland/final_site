@@ -1,14 +1,14 @@
 :root {
-  --bg: #f3efe4;
-  --panel: #fcfaf4;
-  --panel-strong: #f8f4eb;
-  --border: #d2c8b8;
-  --text: black;
-  --muted: #58646c;
-  --accent: #1f6f50;
-  --accent-strong: #0d5c3a;
-  --accent-soft: #d9f0e2;
-  --loss-soft: white;
+  --bg: aliceblue;
+  --panel: ghostwhite;
+  --panel-strong: azure;
+  --border: lightsteelblue;
+  --text: midnightblue;
+  --muted: slategray;
+  --accent: teal;
+  --accent-strong: darkcyan;
+  --accent-soft: mintcream;
+  --loss-soft: lavender;
   --shadow: 0 16px 40px rgba(44, 41, 35, 0.09);
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -26,8 +26,8 @@ body {
   color: var(--text);
   font-family: "Manrope", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(31, 111, 80, 0.08), transparent 24%),
-    linear-gradient(180deg, #f4f0e8 0%, #ece6da 100%);
+    radial-gradient(circle at top left, rgba(0, 128, 128, 0.12), transparent 24%),
+    linear-gradient(180deg, aliceblue 0%, lightcyan 52%, lavender 100%);
 }
 
 body::before {
@@ -86,12 +86,12 @@ body::before {
   padding: 0.55rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: #fffdf8;
+  background: ghostwhite;
 }
 
 .site-nav a:hover,
 .site-nav a:focus {
-  background: #f7f1e7;
+  background: azure;
 }
 
 .eyebrow,
@@ -142,7 +142,7 @@ h1 {
   align-items: center;
   border-radius: 999px;
   padding: 0.45rem 0.8rem;
-  background: #ebe3d6;
+  background: lavender;
   color: var(--text);
   font-weight: 800;
 }
@@ -154,11 +154,11 @@ h1 {
 
 .status.error {
   background: var(--loss-soft);
-  color: #7b3422;
+  color: darkslateblue;
 }
 
 .card {
-  background: rgba(252, 250, 244, 0.95);
+  background: rgba(248, 248, 255, 0.95);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -255,7 +255,7 @@ h1 {
 .leader-card {
   padding: 1rem;
   border-radius: var(--radius-md);
-  background: #fffdf8;
+  background: ghostwhite;
   border: 1px solid var(--border);
 }
 
@@ -325,14 +325,14 @@ select {
   padding: 0.95rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: #fffdf8;
+  background: ghostwhite;
   color: var(--text);
 }
 
 input:focus,
 select:focus,
 button:focus {
-  outline: 2px solid rgba(31, 111, 80, 0.26);
+  outline: 2px solid rgba(0, 128, 128, 0.28);
   outline-offset: 2px;
 }
 
@@ -345,7 +345,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.8rem 1rem;
-  background: #fffdf8;
+  background: ghostwhite;
   cursor: pointer;
   font-weight: 800;
   transition: transform 150ms ease, background 150ms ease;
@@ -353,7 +353,7 @@ button {
 
 button:hover {
   transform: translateY(-1px);
-  background: #f7f1e7;
+  background: azure;
 }
 
 .source-list {
@@ -383,7 +383,7 @@ button:hover {
   height: 84px;
   object-fit: cover;
   border-radius: 18px;
-  background: #e8e2d8;
+  background: lightsteelblue;
   border: 1px solid var(--border);
 }
 
@@ -460,7 +460,7 @@ button:hover {
   padding: 0.7rem;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: #fffdf8;
+  background: ghostwhite;
 }
 
 .value-box,
@@ -474,21 +474,22 @@ button:hover {
 
 .label-box {
   text-align: center;
-  background: #f4eee2;
+  background: aliceblue;
 }
 
 .value-box {
-  background: #f8f4eb;
-  border: 1px solid #ebe1d0;
+  background: azure;
+  border: 1px solid lightsteelblue;
 }
 
 .value-box.win {
-  background: var(--accent-soft);
-  border-color: #a6d5bc;
+  background: seagreen;
+  border-color: darkgreen;
+  color: white;
 }
 
 .value-box.loss {
-  background: #f7f2ea;
+  background: lavender;
 }
 
 .value-box strong,
@@ -501,6 +502,10 @@ button:hover {
 .label-box span {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.value-box.win span {
+  color: honeydew;
 }
 
 .empty-state {
