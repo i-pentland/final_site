@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matchup Room | NFL Player Comparison</title>
+    <meta
+      name="description"
+      content="Matchup Room is an NFL player comparison site that pulls real player data and season stats so users can run head-to-head comparisons."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">Intro to Web Development Final Project</p>
+          <h1>Matchup Room</h1>
+          <p class="subhead">
+            A football comparison tool for checking real NFL player stats head to head.
+          </p>
+        </div>
+        <div class="header-side">
+          <nav class="site-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+          </nav>
+          <div class="header-note">
+            <span class="chip">2025 Regular Season</span>
+            <span class="chip">ESPN public API</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero card">
+          <div class="hero-copy">
+            <h2>Compare real players using real season stats.</h2>
+            <p>
+              This version focuses on one clear feature instead of fake scouting language:
+              pull player information and 2025 regular season stats from ESPN's public
+              JSON endpoints, choose any two players, and highlight the better number in
+              green.
+            </p>
+          </div>
+          <div class="hero-rules">
+            <strong>Comparison rule</strong>
+            <p>
+              Green means the player with the higher value wins that stat. If both values
+              are the same, neither side is highlighted.
+            </p>
+          </div>
+        </section>
+
+        <section class="controls-grid">
+          <article class="card control-card">
+            <div class="section-topline">
+              <h2>Choose Players</h2>
+              <span id="load-status" class="status">Loading data...</span>
+            </div>
+
+            <div class="control-group">
+              <label for="player-a-search">Player A</label>
+              <input
+                id="player-a-search"
+                type="search"
+                list="player-options"
+                placeholder="Start typing Patrick Mahomes"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="control-group">
+              <label for="player-b-search">Player B</label>
+              <input
+                id="player-b-search"
+                type="search"
+                list="player-options"
+                placeholder="Start typing Jaxson Dart"
+                autocomplete="off"
+              />
+            </div>
+
+            <datalist id="player-options"></datalist>
+
+            <div class="control-group">
+              <label for="stat-view">Stat view</label>
+              <select id="stat-view" aria-label="Choose which stats to compare">
+                <option value="auto">Auto by position</option>
+                <option value="passing">Passing</option>
+                <option value="rushing">Rushing</option>
+                <option value="receiving">Receiving</option>
+                <option value="defense">Defense</option>
+                <option value="all">All-around</option>
+              </select>
+            </div>
+
+            <div class="control-actions">
+              <button id="swap-button" type="button">Swap Players</button>
+              <button id="random-button" type="button">Random Matchup</button>
+            </div>
+          </article>
+
+          <article class="card source-card">
+            <div class="section-topline">
+              <h2>What This Pulls</h2>
+            </div>
+            <ul class="source-list">
+              <li>Current NFL roster data comes from ESPN's public team roster endpoints.</li>
+              <li>Player comparison stats come from ESPN's public athlete overview endpoint.</li>
+              <li>Team totals come from ESPN's public team statistics endpoint.</li>
+              <li>No large CSV file is bundled with the project anymore.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="card team-dashboard">
+          <div class="section-topline">
+            <h2>Team Scouting Dashboard</h2>
+            <span id="team-status" class="chip">Waiting for team data</span>
+          </div>
+
+          <div class="team-dashboard-layout">
+            <div class="team-controls">
+              <div class="control-group">
+                <label for="team-select">Choose a team</label>
+                <select id="team-select" aria-label="Choose a team to scout"></select>
+              </div>
+
+              <p class="team-note">
+                This board shows the current team leaders from the same 2025 season data.
+                You can send any leader straight into the player comparison tool.
+              </p>
+
+              <div id="team-summary" class="team-summary"></div>
+            </div>
+
+            <div id="team-leaders" class="team-leaders" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="comparison-grid">
+          <article class="card player-panel" id="player-a-panel"></article>
+          <article class="card board-panel">
+            <div class="section-topline">
+              <h2 id="board-title">Head-to-Head Comparison</h2>
+              <span id="board-mode" class="chip">Auto view</span>
+            </div>
+            <div id="comparison-table" class="comparison-table" aria-live="polite"></div>
+          </article>
+          <article class="card player-panel" id="player-b-panel"></article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
