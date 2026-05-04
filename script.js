@@ -112,7 +112,6 @@ const teamLeaderStats = [
   ["passingYards", "Passing Leader", "passing yards"],
   ["rushingYards", "Rushing Leader", "rushing yards"],
   ["receivingYards", "Receiving Leader", "receiving yards"],
-  ["sacks", "Sack Leader", "sacks"],
   ["totalTackles", "Tackle Leader", "total tackles"],
 ];
 
@@ -449,6 +448,9 @@ async function refreshComparison() {
       } else if (valueB > valueA) {
         classA += " loss";
         classB += " win";
+      } else {
+        classA += " loss";
+        classB += " loss";
       }
 
       return `
