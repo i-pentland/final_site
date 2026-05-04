@@ -32,10 +32,7 @@
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
           </nav>
-          <div class="header-note">
-            <span class="chip">Student Project</span>
-            <span class="chip">NFL Stats Site</span>
-          </div>
+          <span class="header-football" aria-hidden="true">🏈</span>
         </div>
       </header>
 
@@ -43,39 +40,28 @@
         <section class="card about-card">
           <h2>Project Idea</h2>
           <p>
-            Matchup Room is 
+            Part of me has always been absolutely convinced I could be a better General Manager for the Giants than Joe Schoen. Many decisions he make look bad on paper, and turn out to be worse in real life.
           </p>
           <p>
-            Instead of using made-up numbers, the site pulls actual player information and
-            stats so the comparison feels more grounded in real football data.
+            I created this site so that, during the 26-27 NFL season, I can have a deeper insight into the trades that these managers are making.
           </p>
         </section>
 
         <section class="card about-card">
           <h2>How it's built</h2>
+          <p>
           This project was built with AI-assisted development. Specifically, I used Codex 5.4 for debugging, brainstorming, refining parts of the JavaScript logic, and helping locate APIs.
-          AI was part of roughly 50 to 75 percent of the process, but the core idea, user interface, and overall structure of the site were my own. I chose the football comparison concept, designed the interface, and laid out the simpler page structure and JavaScript interactions myself. Then, I had AI mainly to speed up iteration and problem-solving.
+          AI was part of roughly 50 to 75 percent of the process, but the core idea, user interface, and overall structure of the site were my own. I chose the football comparison concept, designed the interface, and laid out the simpler page structure and JavaScript interactions myself. Then, I had AI mainly to speed up iteration and problem-solving.</p>
         </section>
 
         <section class="card about-card">
           <h2>Data Source</h2>
           <p>
-            The project uses nflverse player metadata and 2025 regular season player stats.
-            The page first tries the live public files, and if that fails it uses the local
-            copies bundled with the project.
+            This project pulls live ESPN APIs instead of using embedded data. When I started the project, I was using a CSV file from nflverse on GitHub to get the logic right before tinkering with actual API calls.
           </p>
           <p>
             That setup helps the site keep working more reliably on GitHub Pages or a local
             server.
-          </p>
-        </section>
-
-        <section class="card about-card">
-          <h2>Why I Built It</h2>
-          <p>
-            I wanted the final project to be more specific than a generic sports page. The
-            comparison feature and team dashboard make it feel closer to a small football
-            analytics tool instead of just a list of stats.
           </p>
         </section>
       </main>

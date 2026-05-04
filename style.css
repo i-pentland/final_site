@@ -60,6 +60,17 @@ body::before {
   display: grid;
   justify-items: end;
   gap: 0.75rem;
+  position: relative;
+  padding-right: 2.8rem;
+}
+
+.header-football {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  line-height: 1;
+  transform: rotate(12deg);
 }
 
 .site-nav {
@@ -84,7 +95,6 @@ body::before {
 }
 
 .eyebrow,
-.chip,
 .status,
 .player-meta,
 .data-note,
@@ -504,6 +514,16 @@ button:hover {
 @media (max-width: 640px) {
   .site-shell {
     width: min(100% - 1rem, var(--max-width));
+  }
+
+  .header-side {
+    padding-right: 0;
+  }
+
+  .header-football {
+    position: static;
+    display: inline-block;
+    margin-top: 0.5rem;
   }
 
   .site-header,
